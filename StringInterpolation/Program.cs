@@ -58,6 +58,9 @@ namespace StringInterpolation
             else if (resp == "2")
             {
                 // TODO: parse data file
+                /*
+                 * Code executed on "2" to parse data created in file
+                 */
                 string file = "data.txt";
 
                 /*
@@ -97,7 +100,7 @@ namespace StringInterpolation
                         /*
                          * Handling field delimiting by | containing hours sleep data
                          */
-                        int[] hr = Array.ConvertAll(wk[1].Split('|'), Int32.Parse);
+                        double[] hr = Array.ConvertAll(wk[1].Split('|'), Double.Parse);
 
                         /*
                          * For each sleep hour value add to running total for avg, total
