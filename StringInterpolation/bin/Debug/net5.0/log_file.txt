@@ -1,0 +1,1 @@
+2021-09-13 09:13:04.6383|INFO|StringInterpolation.Program|Program ended

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
-
+using NLog;
+using NLog.Web;
 namespace StringInterpolation
 {
     class Program
@@ -11,6 +12,10 @@ namespace StringInterpolation
             Console.WriteLine("Enter 1 to create data file.");
             Console.WriteLine("Enter 2 to parse data.");
             Console.WriteLine("Enter anything else to quit.");
+            
+            string path = Directory.GetCurrentDirectory() + "\\nlog.config";
+            var logger = NLog.Web.NLogBuilder.ConfigureNLog(path).GetCurrentClassLogger();
+            
             // input response
             string resp = Console.ReadLine();
 
@@ -139,6 +144,7 @@ namespace StringInterpolation
                     }
                 }
             }
+            logger.Info("Program ended");
         }
     }
 }
