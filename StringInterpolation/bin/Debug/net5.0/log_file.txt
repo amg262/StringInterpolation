@@ -1,1 +1,6 @@
 2021-09-13 09:13:04.6383|INFO|StringInterpolation.Program|Program ended
+2021-09-13 09:20:03.7275|INFO|StringInterpolation.Program|Program started
+2021-09-13 09:20:07.1668|INFO|StringInterpolation.Program|Program ended
+2021-09-13 09:20:57.7491|INFO|StringInterpolation.Program|Program started
+2021-09-13 09:21:04.7681|ERROR|StringInterpolation.Program|Invalid input (integer): ""
+2021-09-13 09:21:04.7774|INFO|StringInterpolation.Program|Program ended
