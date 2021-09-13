@@ -76,6 +76,10 @@ namespace StringInterpolation
                      * Create streamreader object and loop thru file before EOF
                      */
                     StreamReader reader = new StreamReader(file);
+
+                    double netTotal = 0;
+                    double netCount = 0;
+                    double netAvg = 0;
                     while (!reader.EndOfStream)
                     {
                         /*
@@ -108,12 +112,15 @@ namespace StringInterpolation
                         foreach (var value in hr)
                         {
                             totalHours += value;
+                            netCount++;
                         }
 
                         /*
                          * Divide hrs by 7 - format to 2 decimal place for output isnt crazy
                          */
                         average = totalHours / 7;
+                        netTotal += totalHours;
+                        netAvg = netTotal / netCount;
                         avgFormat = Math.Round(average, 2);
 
                         Console.WriteLine($"Week of {date:MMM}, {date:dd}, {date:yyyy}");
@@ -125,6 +132,9 @@ namespace StringInterpolation
                         // display hours of sleep for each day
                         Console.WriteLine(
                             $"{hr[0],4}{hr[1],4}{hr[2],4}{hr[3],4}{hr[4],4}{hr[5],4}{hr[6],4}{totalHours,6}{avgFormat,8}");
+                        Console.WriteLine();
+                        Console.WriteLine($"Net Total: {netTotal} hours");
+                        Console.WriteLine($"Net Average: {netAvg:N2} hours");
                         Console.WriteLine();
                     }
                 }
